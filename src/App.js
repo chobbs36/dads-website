@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Tabs from './tabs/tabs';
+import './index.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor() {
+        super();
+        this.state = {
+            currentSection: 'Works'
+        }
+    }
+
+    render() {
+        return (
+            <div style={mainStyles} id="bg">
+                <Tabs />
+            </div>
+        )
+    }
+}
+
+const mainStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'center',
+    justifyContent: 'center',
+    imageRendering: 'pixelated',
+    backgroundSize: 'cover',
+    color: 'white'
 }
 
 export default App;

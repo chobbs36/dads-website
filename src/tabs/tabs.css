@@ -1,0 +1,15 @@
+.tabStyles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: 11px;
+}
+
+.tabStyles a {
+    text-decoration: none;
+}
+
+.tabStyles a:visited {
+    color: white;
+}

@@ -4,8 +4,11 @@
   "private": true,
   "dependencies": {
     "react": "^16.7.0",
+    "react-buttons": "0.0.11",
     "react-dom": "^16.7.0",
-    "react-scripts": "2.1.3"
+    "react-flexbox-grid": "^2.1.2",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
