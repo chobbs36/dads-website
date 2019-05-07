@@ -19,7 +19,7 @@ class Tabs extends Component {
         return (
             <Router>
                 <div>
-                    <ul className="tabStyles">
+                    <ul className="tabStyles" style={tabStyles}>
                         <li>
                             <Link to="/">WORKS</Link>
                         </li>
@@ -34,8 +34,6 @@ class Tabs extends Component {
                         </li>
                     </ul>
 
-                    <hr />
-
                     <Route exact path="/" component={Works} />
                     <Route exact path="/bio" component={Bio} />
                     <Route exact path="/newsletter" component={Newsletter} />
@@ -46,5 +44,11 @@ class Tabs extends Component {
     }
 }
 
+const tabStyles = {
+    backgroundColor: 'black',
+    padding: 15,
+    margin: 0,
+    opacity: 0.7
+}
 
 export default Tabs;

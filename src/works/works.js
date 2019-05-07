@@ -5,14 +5,14 @@ class Works extends Component {
     render() {
         return (
             <div>
-                <div style={worksStyle}>
+                <div>
                     {
                         WORKS.map(WORK => {
                             return (
-                                <div>
-                                    <div key={WORK.id}>{WORK.title}</div>
+                                <div style={worksStyle}>
+                                    {/* <div key={WORK.id}>{WORK.title}</div> */}
                                     <img alt="" src={WORK.image} style={imageStyle} />
-                                    <div>{WORK.description}</div>
+                                    <div style={descriptionStyle}>{WORK.description}</div>
                                     <hr />
                                     <div>{WORK.summary}</div>
                                     <hr />
@@ -22,7 +22,7 @@ class Works extends Component {
                             )
                         })
                     }
-                    <button>Buy Now</button>
+                    <button style={buttonStyle}>Buy Now</button>
                 </div>
             </div>
         )
@@ -35,10 +35,27 @@ const worksStyle = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 50
 }
 const imageStyle = {
     display: 'flex',
     width: 200,
+    marginBottom: 30
+}
+
+const buttonStyle = {
+    margin: 20,
+    width: 100,
+    alignSelf: 'center',
+    padding: 10,
+    backgroundColor: '#008000',
+    color: '#FFFFFF',
+    borderRadius: 5,
+    border: 'none'
+}
+
+const descriptionStyle = {
+    fontStyle: 'italic'
 }
 
 export default Works;

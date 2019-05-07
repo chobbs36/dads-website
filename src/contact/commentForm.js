@@ -35,8 +35,9 @@ class CommentForm extends Component {
         return ref;
     }
     addMessage = (e) => {
-        const target = e.target;
-        const targetName = target.name;
+        let target = e.target;
+        let targetName = target.name;
+        console.log('addMessageValues', targetName);
         this.setState({
             [targetName]: e.target.value,
         });
@@ -44,6 +45,16 @@ class CommentForm extends Component {
         let message = this.generateFirebase();
         message.push(this.state.comment)
         console.log('add message', this.state.comment);
+        this.clearInputFields();
+    }
+
+    clearInputFields = () => {
+        this.setState({
+            comment: {
+                name: '',
+                message: ''
+            }
+        })
     }
 
     isFormValid = () => {
@@ -60,24 +71,27 @@ class CommentForm extends Component {
         return (
             <div>
                 <form style={formStyle} onSubmit={this.addMessage}>
+                    <h3>Leave a comment</h3>
                     <div style={inputStyle}>
-                        <label>
+                        <label style={nameStyle}>
                             <input
                                 name="name"
                                 type="text"
                                 value={this.state.comment.name}
                                 onChange={this.handleFieldChange}
-                                size="50"
-                                placeholder="Your name" />
+                                size="52"
+                                placeholder="Your name"
+                                style={nameInputStyle} />
                         </label>
-                        <label>
+                        <label style={commentStyle}>
                             <textarea
                                 rows="5"
+                                cols="51"
                                 name="message"
                                 value={this.state.comment.message}
                                 onChange={this.handleFieldChange}
-                                size="400"
-                                placeholder="Add your comment here." />
+                                placeholder="Add your comment here."
+                                style={commmentInputStyle} />
                         </label>
                     </div>
                     <button style={buttonStyle}>Submit</button>
@@ -91,9 +105,8 @@ class CommentForm extends Component {
 const formStyle = {
     display: 'flex',
     flexFlow: 'column',
-    height: 100,
     justifyContent: 'center',
-    marginTop: 15
+    marginBottom: 25
 }
 
 const inputStyle = {
@@ -104,8 +117,33 @@ const inputStyle = {
 }
 
 const buttonStyle = {
-    width: 50,
-    alignSelf: 'center'
+    width: 100,
+    alignSelf: 'center',
+    padding: 10,
+    backgroundColor: '#008000',
+    color: '#FFFFFF',
+    borderRadius: 5,
+    border: 'none'
+}
+
+const nameStyle = {
+    marginBottom: 10
+}
+
+const nameInputStyle = {
+    padding: 5,
+    border: 'none',
+    borderRadius: 3
+}
+
+const commentStyle = {
+    marginBottom: 10
+}
+
+const commmentInputStyle = {
+    padding: 5,
+    border: 'none',
+    borderRadius: 3
 }
 
 export default CommentForm;

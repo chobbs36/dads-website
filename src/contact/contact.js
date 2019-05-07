@@ -14,19 +14,17 @@ class Contact extends Component {
     render() {
         return (
             <div style={contactStyle}>
-                <div>
-                    <h3>Leave a comment</h3>
-                    <CommentForm />
-                    <CommentList />
-                </div>
-            </div>
+                <CommentForm />
+                <CommentList />
+            </div >
         )
     }
 }
 
 const contactStyle = {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'row',
+    justifyContent: 'space-evenly'
 }
 
 export default Contact;

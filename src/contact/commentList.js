@@ -4,8 +4,6 @@ import fire from '../firebase/firebase';
 
 import 'firebase/database';
 
-let commentList = [];
-
 class CommentList extends Component {
     constructor(props) {
         super(props);
@@ -29,10 +27,7 @@ class CommentList extends Component {
     }
 
     gotData = (comments) => {
-        console.log('firebase', comments.val());
         let bookComments = comments.val();
-        console.log('bookComments', bookComments);
-
         let showComments = Object.keys(bookComments).map((key) => {
             return bookComments[key];
         })
@@ -45,13 +40,13 @@ class CommentList extends Component {
         return showComments;
     }
 
-    renderCommentUI = (randomArr) => {
-        console.log("we in herer", this.state.comments)
-        return randomArr.map((comment) => {
+    renderCommentUI = (commentArr) => {
+        return commentArr.map((comment) => {
             return (
-                <ul>
-                    <li>{comment.name}: {comment.message}</li>
-                </ul>
+                <div style={commentStyle}>
+                    <h6 style={commentNameStyle}>{comment.name}</h6>
+                    <p style={commentMessageStyle}>{comment.message}</p>
+                </div>
             )
         }
         )
@@ -65,14 +60,48 @@ class CommentList extends Component {
 
     render() {
         console.log('render commentList', this.state.comments);
-
-
         return (
-            <div>
+            <div style={commentListStyle}>
                 {this.renderCommentUI(this.state.comments)}
             </div>
         )
     }
+}
+
+const commentListStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    listStyleType: 'none',
+    marginTop: 20,
+    marginBottom: 20,
+    padding: 5,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: 'transparent',
+    borderRadius: 5,
+    backgroundColor: '#FFFFFF',
+    color: '#000000',
+    opacity: 0.9
+}
+
+const commentStyle = {
+    display: 'flex',
+    borderBottomWidth: 1,
+    borderBottomStyle: 'solid',
+    borderColor: 'black',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    height: 90,
+    justifyContent: 'space-around',
+    margin: 0
+}
+
+const commentNameStyle = {
+    margin: 5
+}
+
+const commentMessageStyle = {
+    margin: 5
 }
 
 export default CommentList;
