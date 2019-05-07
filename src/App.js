@@ -3,11 +3,18 @@ import Tabs from './tabs/tabs';
 import './index.css';
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            currentSection: 'Works'
+            currentSection: 'Works',
+            comments: [],
         }
+    }
+
+    addComment = (comment) => {
+        this.setState({
+            comments: [comment, ...this.state.comments]
+        })
     }
 
     render() {

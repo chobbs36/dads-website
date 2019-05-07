@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^5.10.1",
+    "firebase-admin": "^7.3.0",
     "react": "^16.7.0",
     "react-buttons": "0.0.11",
     "react-dom": "^16.7.0",

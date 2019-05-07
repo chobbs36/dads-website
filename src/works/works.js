@@ -4,8 +4,8 @@ import WORKS from '../data/works';
 class Works extends Component {
     render() {
         return (
-            <div style={worksStyle}>
-                <div>
+            <div>
+                <div style={worksStyle}>
                     {
                         WORKS.map(WORK => {
                             return (
@@ -39,9 +39,6 @@ const worksStyle = {
 const imageStyle = {
     display: 'flex',
     width: 200,
-}
-const summaryStyle = {
-    fontSize: 14,
 }
 
 export default Works;

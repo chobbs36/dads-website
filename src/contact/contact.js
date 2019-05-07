@@ -1,62 +1,32 @@
 import React, { Component } from 'react';
 import CommentList from './commentList';
+import CommentForm from './commentForm';
+
 
 class Contact extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
-            comment: ''
+            comments: [],
         }
-
-    }
-
-    handleInputChange = (event) => {
-        const target = event.target;
-        const targetName = target.name;
-
-        this.setState({
-            [targetName]: event.target.value,
-        });
-    }
-
-    handleSubmit = (event) => {
-        alert(this.state.name + ' commented: ' + this.state.comment);
-        event.preventDefault();
     }
 
     render() {
         return (
-            <form style={formStyle} onSubmit={this.handleSubmit}>
-                <div style={inputStyle}>
-                    <label>
-                        Name:
-                        <input name="name" type="text" value={this.state.name} onChange={this.handleInputChange} size="100" />
-                    </label>
-                    <label>
-                        Comment:
-                        <input name="comment" type="text" value={this.state.comment} onChange={this.handleInputChange} size="100" />
-                    </label>
+            <div style={contactStyle}>
+                <div>
+                    <h3>Leave a comment</h3>
+                    <CommentForm />
+                    <CommentList />
                 </div>
-                <button>Submit</button>
-            </form>
+            </div>
         )
     }
 }
 
-const formStyle = {
+const contactStyle = {
     display: 'flex',
-    flexFlow: 'column wrap',
-    height: 100,
-    justifyContent: 'center',
-    alignItems: 'baseline',
-    wrap: 'no-wrap'
+    flexDirection: 'column'
 }
-
-const inputStyle = {
-    margin: 'auto',
-    width: '100%'
-}
-
 
 export default Contact;

@@ -7,6 +7,14 @@ import Contact from '../contact/contact';
 import './tabs.css';
 
 class Tabs extends Component {
+    constructor(props) {
+        super(props);
+
+        console.log('tabs props', props);
+
+    }
+
+
     render() {
         return (
             <Router>
@@ -22,7 +30,7 @@ class Tabs extends Component {
                             <Link to="/newsletter">NEWSLETTER</Link>
                         </li>
                         <li>
-                            <Link to="/contact">CONTACT</Link>
+                            <Link to="/contact" >CONTACT</Link>
                         </li>
                     </ul>
 
