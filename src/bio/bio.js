@@ -5,10 +5,10 @@ class Bio extends Component {
 
     render() {
         return (
-            <div>
+            <div style={bioStyle}>
                 <h1>Chris W. Hobbs</h1>
                 <img src={DadsPic} alt="" style={imageStyle} />
-                <p>A native of Tallahassee, FL, Chris is an entrepreneur
+                <p style={paragraphStyle}>A native of Tallahassee, FL, Chris is an entrepreneur
                     who currently resides in Marietta, GA. A married father
                     of two, his interest and love for writing began at an
                     early age. After a standout football career at the
@@ -23,6 +23,14 @@ class Bio extends Component {
 
 const imageStyle = {
     width: '30%'
+}
+
+const bioStyle = {
+    margin: 30
+}
+
+const paragraphStyle = {
+    margin: 35
 }
 
 export default Bio;

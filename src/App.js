@@ -20,7 +20,7 @@ class App extends Component {
     render() {
         return (
             <div style={mainStyles} id="bg">
-                <Tabs />
+                <Tabs style={pageStyles} />
             </div>
         )
     }
@@ -34,6 +34,10 @@ const mainStyles = {
     imageRendering: 'pixelated',
     backgroundSize: 'cover',
     color: 'white'
+}
+
+const pageStyles = {
+
 }
 
 export default App;

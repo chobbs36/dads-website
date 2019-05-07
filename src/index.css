@@ -1,6 +1,7 @@
 body, html {
-    height: 100%;
     margin: 0;
-    background-image: url('./assets/officebuilding.jpg');
+    background-image: url('./assets/architecture-building-glass.jpg');
     background-size: cover;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
