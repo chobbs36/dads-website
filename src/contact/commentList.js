@@ -47,7 +47,7 @@ class CommentList extends Component {
         <div style={commentStyle}>
           <div style={nameAndDateStyle}>
             <h6 style={commentNameStyle}>{comment.name}</h6>
-            <CommentDate style={dateStyle} />
+            <CommentDate />
           </div>
           <p style={commentMessageStyle}>{comment.message}</p>
         </div>
@@ -83,7 +83,9 @@ const commentListStyle = {
   borderRadius: 5,
   backgroundColor: "#FFFFFF",
   color: "#000000",
-  opacity: 0.9
+  opacity: 0.9,
+  height: 580,
+  overflow: "auto"
 };
 
 const commentStyle = {
@@ -100,16 +102,15 @@ const commentStyle = {
 
 const nameAndDateStyle = {
   display: "flex",
-  flexDirection: "row"
-};
-
-const dateStyle = {
-  fontSize: "10px"
+  flexDirection: "row",
+  alignItems: "baseline"
 };
 
 const commentNameStyle = {
+  fontSize: "16px",
   margin: 5,
-  fontSize: "12px"
+  fontWeight: 700,
+  color: "#336BFF"
 };
 
 const commentMessageStyle = {

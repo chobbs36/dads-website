@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import WORKS from "../data/works";
 
+import "./works.css";
+
 class Works extends Component {
   render() {
     return (
@@ -8,13 +10,17 @@ class Works extends Component {
         <div>
           {WORKS.map(WORK => {
             return (
-              <div style={worksStyle}>
+              <div className="works">
                 {/* <div key={WORK.id}>{WORK.title}</div> */}
-                <img alt="" src={WORK.image} style={imageStyle} />
+                <div style={leftSideStyle}>
+                  <img alt="" src={WORK.image} style={imageStyle} />
+                  <button style={buttonStyle}>Buy Now</button>
+                </div>
                 <div
                   className="worksDescAndSummary"
                   style={worksDescAndSummary}
                 >
+                  <div className="title">{WORK.title}</div>
                   <div style={descriptionStyle}>{WORK.description}</div>
                   <hr />
                   <div>{WORK.summary}</div>
@@ -24,7 +30,6 @@ class Works extends Component {
               </div>
             );
           })}
-          <button style={buttonStyle}>Buy Now</button>
         </div>
         <div
           className="fb-like"
@@ -41,17 +46,15 @@ class Works extends Component {
   }
 }
 
-const worksStyle = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-evenly",
-  alignItems: "center",
-  margin: 50
-};
 const imageStyle = {
   display: "flex",
   width: 200,
-  marginBottom: 30
+  marginBottom: 30,
+  alignSelf: "center"
+};
+const leftSideStyle = {
+  display: "flex",
+  flexDirection: "column"
 };
 const worksDescAndSummary = {
   display: "flex",

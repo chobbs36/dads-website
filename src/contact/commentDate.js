@@ -10,7 +10,12 @@ const CurrentDate = () => {
 
   console.log("today's date", todaysDate);
 
-  return <div>{todaysDate}</div>;
+  return <div style={dateStyle}>{todaysDate}</div>;
+};
+
+const dateStyle = {
+  fontSize: "10px",
+  fontStyle: "italic"
 };
 
 export default CurrentDate;

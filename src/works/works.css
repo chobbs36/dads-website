@@ -1,0 +1,13 @@
+.title {
+  font-family: "Faster One", cursive;
+  font-size: 80px;
+  margin-bottom: 50px;
+}
+
+.works {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 100px 50px 50px 50px;
+}
