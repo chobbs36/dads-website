@@ -14,7 +14,9 @@ class Works extends Component {
                 {/* <div key={WORK.id}>{WORK.title}</div> */}
                 <div style={leftSideStyle}>
                   <img alt="" src={WORK.image} style={imageStyle} />
-                  <button style={buttonStyle}>Buy Now</button>
+                  <a href={WORK.link}>
+                    <button style={buttonStyle}>Buy Now</button>
+                  </a>
                 </div>
                 <div
                   className="worksDescAndSummary"

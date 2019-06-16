@@ -11,6 +11,7 @@ const CurrentDate = () => {
   console.log("today's date", todaysDate);
 
   return <div style={dateStyle}>{todaysDate}</div>;
+  // return todaysDate;
 };
 
 const dateStyle = {

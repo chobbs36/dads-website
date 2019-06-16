@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import fire from "../firebase/firebase";
 
+import CommentDate from "./commentDate";
+
 import "firebase/database";
 
 class CommentForm extends Component {
@@ -12,13 +14,15 @@ class CommentForm extends Component {
       error: "",
       comment: {
         name: "",
-        message: ""
+        message: "",
+        date: ""
       }
     };
   }
 
   handleFieldChange = event => {
     const { value, name } = event.target;
+
     this.setState({
       ...this.state,
       comment: {
@@ -37,10 +41,19 @@ class CommentForm extends Component {
   addMessage = e => {
     let target = e.target;
     let targetName = target.name;
-    console.log("addMessageValues", targetName);
+    let todaysDate = new CommentDate();
+    console.log(
+      "this is the date function in comment form",
+      todaysDate.props.children
+    );
     this.setState({
-      [targetName]: e.target.value
+      [targetName]: e.target.value,
+      comment: {
+        date: todaysDate.props.children
+      }
     });
+    console.log("the state hey", this.state.comment);
+
     e.preventDefault(); // prevent form submit from reloading the page
     let message = this.generateFirebase();
     message.push(this.state.comment);
@@ -52,7 +65,8 @@ class CommentForm extends Component {
     this.setState({
       comment: {
         name: "",
-        message: ""
+        message: "",
+        date: ""
       }
     });
   };

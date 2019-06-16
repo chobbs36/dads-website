@@ -37,6 +37,7 @@ class CommentList extends Component {
     this.setState({
       comments: showComments
     });
+    console.log("the comments in state after setting it", this.state.comments);
 
     return showComments;
   };
